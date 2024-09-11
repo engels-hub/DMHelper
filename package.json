@@ -1,0 +1,18 @@
+{
+  "name": "dmhelper",
+  "version": "0.0.1",
+  "description": "Cool and awesome uni project for the homies",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron ."
+  },
+  "keywords": [
+    "dnd"
+  ],
+  "author": "enge1s",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^32.0.2"
+  }
+}
