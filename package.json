@@ -14,5 +14,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^32.0.2"
+  },
+  "dependencies": {
+    "interactjs": "^1.10.27"
   }
 }
