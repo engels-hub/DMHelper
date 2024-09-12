@@ -1,11 +1,11 @@
-#drag-1, #drag-2 {
-    width: 100px;
-    height: 100px;
+.drag {
+    width: 5vmin;
+    height: 5vmin;
     
     margin: 1rem 0 0 1rem;
     background-color: #29e;
     color: white;
-    border-radius: 0.75em;
+    border-radius: 100%;
     padding: 4%;
     touch-action: none;
     user-select: none;
@@ -17,4 +17,11 @@
     background-size: cover;
     color: red;
     padding-left: 20px;
+    height:100vh;
+    width:100vw;
+  }
+  .new{
+    position:absolute;
+    top:50px;
+    left:50px;
   }
