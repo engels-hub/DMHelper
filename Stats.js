@@ -16,4 +16,4 @@ function StatGeneration() {
 
 }
 
-sumTopThree();
+StatGeneration();
