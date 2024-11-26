@@ -71,6 +71,8 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
+    autoHideMenuBar: true,
+    frame: false,
     width: 1024,
     height: 728,
     icon: getAssetPath('icon.png'),
@@ -128,6 +130,21 @@ app
   .whenReady()
   .then(() => {
     createWindow();
+
+    ipcMain.on('minimizeApp', () => {
+      mainWindow?.minimize();
+    });
+    ipcMain.on('maximizeApp', () => {
+      if (mainWindow?.isMaximized()) {
+        mainWindow?.unmaximize();
+      } else {
+        mainWindow?.maximize();
+      }
+    });
+    ipcMain.on('closeApp', () => {
+      mainWindow?.close();
+    });
+
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the
       // dock icon is clicked and there are no other windows open.
