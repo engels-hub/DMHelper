@@ -1,5 +1,9 @@
 .title-bar{
   padding-left:8px;
   padding-right:8px;
+  app-region: drag;
+}
 
+button{
+  app-region: no-drag;
 }

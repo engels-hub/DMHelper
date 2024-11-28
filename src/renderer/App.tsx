@@ -1,7 +1,9 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Titlebar from './components/titlebar';
-import Mobs from './components/Mobs';
+import Mobs from './components/mobs';
+import Actions from './components/actions';
+import DBox from './components/map';
 
 function Main() {
   return (
@@ -9,8 +11,10 @@ function Main() {
       <div className="column mobs">
         <Mobs />
       </div>
-      <div className="column map">MAP</div>
-      <div className="column actions">ACTION LIST</div>
+      <DBox />
+      <div className="column actions">
+        <Actions />
+      </div>
     </div>
   );
 }

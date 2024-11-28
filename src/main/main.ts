@@ -77,6 +77,7 @@ const createWindow = async () => {
     height: 728,
     icon: getAssetPath('icon.png'),
     webPreferences: {
+      webgl: true,
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
@@ -130,11 +131,13 @@ app
   .whenReady()
   .then(() => {
     createWindow();
+    console.warn('yooo');
 
     ipcMain.on('minimizeApp', () => {
       mainWindow?.minimize();
     });
     ipcMain.on('maximizeApp', () => {
+      console.warn('yooo');
       if (mainWindow?.isMaximized()) {
         mainWindow?.unmaximize();
       } else {
@@ -151,4 +154,4 @@ app
       if (mainWindow === null) createWindow();
     });
   })
-  .catch(console.log);
+  .catch(null);
