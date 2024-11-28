@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import DiceBox from '@3d-dice/dice-box-threejs';
 import React, { useEffect } from 'react';
 
@@ -21,9 +22,10 @@ export default function DBox() {
       light_intensity: 1,
       gravity_multiplier: 600,
       baseScale: 100,
-      strength: 2,
+      strength: 5,
       onRollComplete: (results) => {
-        console.log(`I've got results :>> `, results);
+        const resultBox = document.getElementById('rollValue');
+        resultBox.innerHTML = results.total;
       },
     });
     diceBox
@@ -36,7 +38,18 @@ export default function DBox() {
       .catch((e) => console.error(e));
     const rollBtn = document.getElementById('map');
     rollBtn?.addEventListener('click', async () => {
-      await diceBox.roll('1d2+1d4');
+      let sliderData = '';
+      const sliders = document.getElementById('sliders').children;
+      for (let i = 0; i < sliders.length - 1; i += 1) {
+        if (sliders[i].children[2].value !== '0') {
+          sliderData += sliders[i].children[2].value;
+          sliderData += `${sliders[i].children[1].id}+`;
+        }
+      }
+      sliderData += sliders[sliders.length - 1].children[2].value;
+      console.log(sliderData);
+
+      await diceBox.roll(sliderData);
     });
 
     // const canvas = document.getElementById('map').children[1];

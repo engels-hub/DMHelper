@@ -2,7 +2,7 @@ function Mobs() {
   // load mobs from chache here
   return (
     <div>
-      <blockquote>Put statblocks here</blockquote>
+      <h3 id="rollValue">Put statblocks here</h3>
       <ul className="tree-view">
         <li>
           <details open>
